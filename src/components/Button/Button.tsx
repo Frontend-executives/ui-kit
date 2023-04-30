@@ -4,11 +4,11 @@ import { FC, ReactNode } from 'react'
 import styles from './Button.module.scss'
 
 interface IButtonProps {
+  children: ReactNode
   className?: string
   isDisabled?: boolean
   isLoading?: boolean
   theme?: 'primary' | 'failed' | 'success'
-  children: ReactNode
 }
 
 const Button: FC<IButtonProps> = ({
