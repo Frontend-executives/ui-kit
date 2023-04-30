@@ -1,0 +1,43 @@
+@import "../../assets/styles/global";
+@import "../../assets/styles/mixins";
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 40px;
+
+
+  font-family: "Gilroy", serif;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+
+  border-radius: 8px;
+  border: 0;
+
+  transition: background-color 0.4s ease;
+
+  &_primary {
+    @include theme($white, $ui-blue, $ui-blue-light, $ui-blue-dark);
+  }
+
+  &_success {
+    @include theme($white, $ui-green, $ui-green-light, $ui-green-dark);
+  }
+
+  &_failed {
+    @include theme($white, $ui-red, $ui-red-light, $ui-red-dark);
+  }
+
+  &:disabled {
+    background-color: $gray;
+
+    cursor: not-allowed;
+  }
+}
+
+.loader {
+  @include loader($white);
+}
