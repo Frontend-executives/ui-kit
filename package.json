@@ -5,10 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "storybook dev -p 3000",
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "build-storybook": "storybook build",
+    "build": "storybook build",
     "lint:styles": "stylelint **/*.scss",
     "lint:scripts": "eslint --ext .js,.jsx,.ts,.tsx src/",
     "lint": "npm run lint:styles && npm run lint:scripts",
