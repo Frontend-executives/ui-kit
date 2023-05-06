@@ -12,7 +12,8 @@
     "lint:styles": "stylelint **/*.scss",
     "lint:scripts": "eslint --ext .js,.jsx,.ts,.tsx src/",
     "lint": "npm run lint:styles && npm run lint:scripts",
-    "lint-fix": "eslint --ext .js,.jsx,.ts,.tsx src/ --fix && stylelint **/*.scss --fix"
+    "lint-fix": "eslint --ext .js,.jsx,.ts,.tsx src/ --fix && stylelint **/*.scss --fix",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@splidejs/react-splide": "^0.7.12",

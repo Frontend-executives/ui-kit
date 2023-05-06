@@ -1,20 +1,37 @@
-$ui-blue: #1f75fe;
-$ui-blue-light: #1992ff;
-$ui-blue-dark: #206fff;
+// TEXT COLORS
+$text-primary: #161616;
+$text-secondary: #6b6b6b;
+$text-tertiary: #a8a8a8;
+$text-on-color: #ffffff;
+$text-brand: #186ade;
+$text-success: #077d55;
+$text-warning: #cf5b16;
+$text-error: #d91f11;
 
-$ui-green: #218248;
-$ui-green-light: #00ae46;
-$ui-green-dark: #00712e;
+// PRIMARY COLORS
+$ui-blue: #186ade;
+$ui-blue-hover: #0d4ea6;
+$ui-blue-active: #103a75;
 
-$ui-red: #b32d30;
-$ui-red-light: #ef0006;
-$ui-red-dark: #9c0004;
+$ui-gray: #6b6b6b;
+$ui-gray-hover: #515152;
+$ui-gray-active: #393939;
 
-$ui-yellow: #f8df23;
-$ui-yellow-light: #f8f023;
-$ui-yellow-dark: #f8cf23;
+$ui-green: #077d55;
+$ui-green-hover: #075e45;
+$ui-green-active: #094536;
 
-$white: #ffffff;
-$black: #000000;
-$gray: #676767;
-$dark: #161718;
+$ui-orange: #cf5b16;
+$ui-orange-hover: #9e3917;
+$ui-orange-active: #72321b;
+
+$ui-red: #d91f11;
+$ui-red-hover: #a1160a;
+$ui-red-active: #75160c;
+
+// BACKGROUND COLORS
+$background-white: #ffffff;
+$background-gray: #f5f5f5;
+$background-brand: #186ade;
+$background-overlay: rgba(0, 0, 0, 0.65);
+$border: #c6c6c6;
