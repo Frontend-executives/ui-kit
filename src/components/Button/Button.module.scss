@@ -6,7 +6,6 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 10px 40px;
 
   font-family: "Gilroy", serif;
   font-size: 14px;
@@ -35,11 +34,39 @@
     @include theme($text-on-color, $ui-orange, $ui-orange-hover, $ui-orange-active);
   }
 
+  &_S {
+    padding: 10px 40px;
+
+    &.onlyIcon {
+      padding: 10px;
+    }
+  }
+
+  &_M {
+    padding: 14px 40px;
+
+    &.onlyIcon {
+      padding: 14px;
+    }
+  }
+
+  &_L {
+    padding: 18px 40px;
+
+    &.onlyIcon {
+      padding: 18px;
+    }
+  }
+
   &:disabled {
     background-color: $ui-gray-active;
 
     cursor: not-allowed;
   }
+}
+
+.rounded {
+  border-radius: 100px;
 }
 
 .loader {
@@ -50,8 +77,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-.onlyIcon {
-  padding: 10px;
 }
