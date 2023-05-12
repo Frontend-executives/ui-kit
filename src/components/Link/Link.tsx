@@ -2,10 +2,11 @@ import clsx from 'clsx'
 import React, { FC } from 'react'
 
 import { Condition } from '../Condition'
+import IconExternal from '../icons/External'
 import styles from './Link.module.scss'
 import { ILinkProps } from './types'
 
-const Link: FC<ILinkProps> = ({ icon, isDisabled, isExternal, text = 'Primary' }) => {
+const Link: FC<ILinkProps> = ({ isDisabled, isExternal, text = 'Primary' }) => {
   const externalAttributes = isExternal ? { rel: 'noopener noreferrer', target: '_blank' } : {}
   return (
     <a className={clsx(
@@ -17,7 +18,9 @@ const Link: FC<ILinkProps> = ({ icon, isDisabled, isExternal, text = 'Primary' }
     )}
        href='https://www.google.com' {...externalAttributes}>
       {text}
-      <Condition match={Boolean(isExternal && icon)}>{icon}</Condition>
+      <Condition match={Boolean(isExternal)}>
+        <IconExternal className='icon' />
+      </Condition>
     </a>
   )
 

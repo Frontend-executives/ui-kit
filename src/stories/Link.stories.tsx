@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import ExternalIcon from '../components/icons/External'
 import { Link } from '../components/Link'
 import { StoryContainer } from '../components/StoryContainer'
 
@@ -18,13 +17,13 @@ export const Primary: Story = {
 }
 
 export const External: Story = {
-  render: (args) => <Link {...args} icon={<ExternalIcon />} isExternal text='External' />,
+  render: (args) => <Link {...args} isExternal text='External' />,
 }
 export const Disabled: Story = {
   render: (args) => (
     <StoryContainer>
       <Link {...args} isDisabled text='Disabled' />
-      <Link {...args} icon={<ExternalIcon />} isDisabled isExternal text='External Disabled' />
+      <Link {...args} isDisabled isExternal text='External Disabled' />
     </StoryContainer>
   ),
 }

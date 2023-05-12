@@ -10,25 +10,19 @@
 
   &:hover {
     color: $ui-blue-hover;
-
-    svg path {
-      fill: $ui-blue-hover;
-    }
   }
 
   &:active {
     color: $ui-blue-active;
-
-    svg, svg path {
-      fill: $ui-blue-active;
-    }
   }
 
-  &:focus, &:focus-visible {
+  &:focus,
+  &:focus-visible {
     outline: 1px solid $ui-blue-active;
   }
 
-  &:disabled, &_disabled {
+  &:disabled,
+  &_disabled {
     opacity: 0.25;
     pointer-events: none;
   }
@@ -37,11 +31,5 @@
     display: inline-flex;
     align-items: center;
     gap: 4px;
-
-    &:hover {
-      svg, svg path {
-        fill: $ui-blue-hover;
-      }
-    }
   }
 }
