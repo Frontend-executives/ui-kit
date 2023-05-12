@@ -1,0 +1,47 @@
+@import "../../assets/styles/global";
+@import "../../assets/styles/mixins";
+
+.link {
+  font-family: "Gilroy", "Segoe UI", sans-serif;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: $ui-blue;
+
+  &:hover {
+    color: $ui-blue-hover;
+
+    svg path {
+      fill: $ui-blue-hover;
+    }
+  }
+
+  &:active {
+    color: $ui-blue-active;
+
+    svg, svg path {
+      fill: $ui-blue-active;
+    }
+  }
+
+  &:focus, &:focus-visible {
+    outline: 1px solid $ui-blue-active;
+  }
+
+  &:disabled, &_disabled {
+    opacity: 0.25;
+    pointer-events: none;
+  }
+
+  &_external {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+
+    &:hover {
+      svg, svg path {
+        fill: $ui-blue-hover;
+      }
+    }
+  }
+}
