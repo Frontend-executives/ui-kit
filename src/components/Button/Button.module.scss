@@ -18,51 +18,63 @@
 
   transition: background-color 0.2s ease, outline 0.2s ease;
 
-  &_primary {
-    @include theme($text-on-color, $ui-blue, $ui-blue-hover, $ui-blue-active);
-  }
-
-  &_success {
-    @include theme($text-on-color, $ui-green, $ui-green-hover, $ui-green-active);
-  }
-
-  &_failed {
-    @include theme($text-on-color, $ui-red, $ui-red-hover, $ui-red-active);
-  }
-
-  &_warning {
-    @include theme($text-on-color, $ui-orange, $ui-orange-hover, $ui-orange-active);
-  }
-
-  &_S {
-    padding: 10px 40px;
-
-    &.onlyIcon {
-      padding: 10px;
-    }
-  }
-
-  &_M {
-    padding: 14px 40px;
-
-    &.onlyIcon {
-      padding: 14px;
-    }
-  }
-
-  &_L {
-    padding: 18px 40px;
-
-    &.onlyIcon {
-      padding: 18px;
-    }
-  }
-
   &:disabled {
     background-color: $ui-gray-active;
 
     cursor: not-allowed;
   }
+}
+
+.s {
+  padding: 10px 40px;
+
+  &.onlyIcon {
+    padding: 10px;
+  }
+}
+
+.m {
+  padding: 14px 40px;
+
+  &.onlyIcon {
+    padding: 14px;
+  }
+}
+
+.l {
+  padding: 18px 40px;
+
+  &.onlyIcon {
+    padding: 18px;
+  }
+}
+
+.primary {
+  @include theme($text-on-color, $ui-blue, $ui-blue-hover, $ui-blue-active);
+}
+
+.success {
+  @include theme($text-on-color, $ui-green, $ui-green-hover, $ui-green-active);
+}
+
+.failed {
+  @include theme($text-on-color, $ui-red, $ui-red-hover, $ui-red-active);
+}
+
+.warning {
+  @include theme($text-on-color, $ui-orange, $ui-orange-hover, $ui-orange-active);
+}
+
+.tertiary {
+  @include theme($ui-blue, transparent, transparent, transparent);
+}
+
+.black {
+  @include theme($text-on-color, $ui-black, $ui-black-hover, $ui-black-active);
+}
+
+.white {
+  @include theme($ui-blue, $ui-white, $ui-white-hover, $ui-white-active);
 }
 
 .rounded {

@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import { FC } from 'react'
 
-import { IconSize } from '../../types/types'
+import { IconSize, SIZES, THEMES } from '../../types/types'
 import { Condition } from '../Condition'
 import Loader from '../icons/Loader'
 import styles from './Button.module.scss'
@@ -13,22 +13,18 @@ const Button: FC<IButtonProps> = ({
   isDisabled = false,
   isLoading = false,
   isRounded = false,
-  size = 'M',
+  size = SIZES.m,
   text = '',
-  theme = 'primary',
+  theme = THEMES.primary,
 }) => {
   return (
     <button
-      className={clsx(
-        styles.button,
-        styles[`button_${theme}`],
-        styles[`button_${size}`],
-        className,
-        {
-          [styles.onlyIcon]: icon && !text,
-          [styles.rounded]: isRounded,
-        },
-      )}
+      className={clsx(styles.button, className, {
+        [styles[theme]]: styles[theme],
+        [styles[size]]: styles[size],
+        [styles.onlyIcon]: icon && !text,
+        [styles.rounded]: isRounded,
+      })}
       disabled={isDisabled || isLoading}
     >
       <Condition match={isLoading}>
