@@ -1,6 +1,12 @@
+@import "../../assets/styles/global";
+
 .container {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 16px;
+  padding: 16px;
+
+  background-color: $background-gray;
+  border-radius: 8px;
 }
