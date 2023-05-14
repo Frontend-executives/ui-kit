@@ -22,10 +22,18 @@
     "build": "storybook build",
     "deploy": "npm run lint && npm run typecheck && npm run build && gh-pages -d storybook-static",
     "lint:styles": "stylelint **/*.scss",
-    "lint:scripts": "eslint --ext .js,.jsx,.ts,.tsx src/",
+    "lint:scripts": "eslint --ext .ts,.tsx src/",
     "lint": "npm run lint:styles && npm run lint:scripts",
     "lint-fix": "eslint --ext .js,.jsx,.ts,.tsx src/ --fix && stylelint **/*.scss --fix",
     "typecheck": "tsc --noEmit"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx}": [
+      "npm run lint:scripts"
+    ],
+    "**/*.scss": [
+      "npm run lint:styles"
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -77,6 +85,7 @@
     "eslint-plugin-typescript-sort-keys": "^2.3.0",
     "gh-pages": "^5.0.0",
     "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
     "postcss-scss": "^4.0.6",
     "prop-types": "^15.8.1",
     "storybook": "^7.0.9",
