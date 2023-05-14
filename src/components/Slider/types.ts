@@ -8,6 +8,7 @@ export interface ISliderProps {
   isArrowsDisabled?: boolean
   isAutoPlay?: boolean
   isPaginationDisabled?: boolean
+  onClick?: VoidFunction
   padding?: (typeof SPACING)[keyof typeof SPACING]
   slidesPerPage?: number
 }

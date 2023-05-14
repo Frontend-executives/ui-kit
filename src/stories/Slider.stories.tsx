@@ -43,7 +43,7 @@ export const DefaultSlider: Story = {
   ),
 }
 
-export const DefaultSliderWithGapAndPadding: Story = {
+export const SliderWithGapAndPadding: Story = {
   render: (args) => (
     <StoryContainer>
       <Slider {...args} gap={SPACING.spacing4} padding={SPACING.spacing9}>
@@ -72,7 +72,7 @@ export const DefaultSliderWithGapAndPadding: Story = {
   ),
 }
 
-export const DefaultMultipleTextSlider: Story = {
+export const MultipleSlider: Story = {
   render: (args) => (
     <StoryContainer>
       <Slider {...args} slidesPerPage={2}>
@@ -89,15 +89,27 @@ export const DefaultMultipleTextSlider: Story = {
   ),
 }
 
-export const DefaultAutoplayMultipleTextSlider: Story = {
+export const AutoplayMultipleSlider: Story = {
   render: (args) => (
     <StoryContainer>
-      <Slider {...args} isAutoPlay slidesPerPage={2}>
+      <Slider
+        {...args}
+        isArrowsDisabled
+        isAutoPlay
+        isPaginationDisabled
+        slidesPerPage={2}
+      >
         <p>{sliderMock.text.first}</p>
         <p>{sliderMock.text.second}</p>
         <p>{sliderMock.text.third}</p>
       </Slider>
-      <Slider {...args} isAutoPlay slidesPerPage={2}>
+      <Slider
+        {...args}
+        isArrowsDisabled
+        isAutoPlay
+        isPaginationDisabled
+        slidesPerPage={2}
+      >
         <img alt={sliderMock.text.first} src={sliderMock.images.first} />
         <img alt={sliderMock.text.second} src={sliderMock.images.second} />
         <img alt={sliderMock.text.third} src={sliderMock.images.third} />
