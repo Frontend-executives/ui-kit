@@ -18,6 +18,7 @@ export const SIZES = {
   l: 'l',
   m: 'm',
   s: 's',
+  xs: 'xs',
 } as const
 
 export const SPACING = {

@@ -6,6 +6,7 @@
 - `Link`
 - `Slider`
 - `Condition`
+- `Modal`
 
 ### Установка зависимостей:
 
