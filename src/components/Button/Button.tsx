@@ -13,19 +13,19 @@ const Button: FC<IButtonProps> = ({
   isDisabled = false,
   isLoading = false,
   isRounded = false,
+  onClick,
   size = SIZES.m,
   text = '',
   theme = THEMES.primary,
 }) => {
   return (
     <button
-      className={clsx(styles.button, className, {
-        [styles[theme]]: styles[theme],
-        [styles[size]]: styles[size],
+      className={clsx(styles.button, className, styles[theme], styles[size], {
         [styles.onlyIcon]: icon && !text,
         [styles.rounded]: isRounded,
       })}
       disabled={isDisabled || isLoading}
+      onClick={onClick}
     >
       <Condition match={isLoading}>
         <Loader

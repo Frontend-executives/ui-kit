@@ -1,0 +1,59 @@
+@import "../../assets/styles/global";
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+
+  background-color: $background-overlay;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2;
+  width: 100%;
+  min-height: 100px;
+  max-width: 50vw;
+  padding: $spacing-2;
+
+  background-color: $ui-white;
+  border-radius: $radius-2;
+
+  transition: opacity 0.2s ease;
+}
+
+.button {
+  align-self: flex-end;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
