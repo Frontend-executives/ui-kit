@@ -23,6 +23,11 @@
 
     cursor: not-allowed;
   }
+
+  &:focus {
+    outline: 1px solid $ui-blue;
+    outline-offset: 2px;
+  }
 }
 
 .s {
