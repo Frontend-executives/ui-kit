@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-import { SIZES, THEMES } from '../../types/types'
+import { SIZES, THEMES } from '../../utils/constants'
 
 export interface IButtonProps {
   className?: string

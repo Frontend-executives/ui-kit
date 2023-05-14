@@ -1,0 +1,17 @@
+@import "../../assets/styles/global";
+
+.slider {
+  width: 100%;
+}
+
+.slide {
+  & img {
+    object-fit: cover;
+    max-width: 100%;
+    height: 100%;
+  }
+}
+
+.progressBar {
+  background-color: $ui-blue;
+}

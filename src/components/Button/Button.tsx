@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import { FC } from 'react'
 
-import { IconSize, SIZES, THEMES } from '../../types/types'
+import { ICON_SIZES, SIZES, THEMES } from '../../utils/constants'
 import { Condition } from '../Condition'
 import Loader from '../icons/Loader'
 import styles from './Button.module.scss'
@@ -30,8 +30,8 @@ const Button: FC<IButtonProps> = ({
       <Condition match={isLoading}>
         <Loader
           className={styles.loader}
-          height={IconSize.M}
-          width={IconSize.M}
+          height={ICON_SIZES.m}
+          width={ICON_SIZES.m}
         />
       </Condition>
       <Condition match={Boolean(!isLoading && icon)}>{icon}</Condition>
