@@ -16,6 +16,7 @@ const Slider: FC<ISliderProps> = ({
   isArrowsDisabled = false,
   isAutoPlay = false,
   isPaginationDisabled = false,
+  onClick,
   padding = SPACING.spacing0,
   slidesPerPage = 1,
 }) => {
@@ -38,7 +39,11 @@ const Slider: FC<ISliderProps> = ({
       <Condition match={Boolean(children)}>
         <SplideTrack>
           {Children.map(children, (child: ReactNode) => (
-            <SplideSlide className={styles.slide} key={nanoid()}>
+            <SplideSlide
+              className={styles.slide}
+              key={nanoid()}
+              onClick={onClick}
+            >
               {child}
             </SplideSlide>
           ))}
