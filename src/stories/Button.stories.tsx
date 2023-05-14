@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from '../components/Button'
 import Profile from '../components/icons/Profile'
 import { StoryContainer } from '../components/StoryContainer'
-import { IconSize } from '../types/types'
+import { ICON_SIZES } from '../utils/constants'
 
 const meta: Meta<typeof Button> = {
   component: Button,
@@ -51,18 +51,18 @@ export const WithIcon: Story = {
     <StoryContainer>
       <Button
         {...args}
-        icon={<Profile height={IconSize.M} width={IconSize.M} />}
+        icon={<Profile height={ICON_SIZES.m} width={ICON_SIZES.m} />}
         size='l'
         text='With Icon'
       />
       <Button
         {...args}
-        icon={<Profile height={IconSize.M} width={IconSize.M} />}
+        icon={<Profile height={ICON_SIZES.m} width={ICON_SIZES.m} />}
         text='With Icon'
       />
       <Button
         {...args}
-        icon={<Profile height={IconSize.M} width={IconSize.M} />}
+        icon={<Profile height={ICON_SIZES.m} width={ICON_SIZES.m} />}
         size='s'
         text='With Icon'
       />
@@ -95,32 +95,32 @@ export const IconWithoutText: Story = {
     <StoryContainer>
       <Button
         {...args}
-        icon={<Profile height={IconSize.M} width={IconSize.M} />}
+        icon={<Profile height={ICON_SIZES.m} width={ICON_SIZES.m} />}
         size='l'
       />
       <Button
         {...args}
-        icon={<Profile height={IconSize.M} width={IconSize.M} />}
+        icon={<Profile height={ICON_SIZES.m} width={ICON_SIZES.m} />}
         isRounded
         size='l'
       />
       <Button
         {...args}
-        icon={<Profile height={IconSize.M} width={IconSize.M} />}
+        icon={<Profile height={ICON_SIZES.m} width={ICON_SIZES.m} />}
       />
       <Button
         {...args}
-        icon={<Profile height={IconSize.M} width={IconSize.M} />}
+        icon={<Profile height={ICON_SIZES.m} width={ICON_SIZES.m} />}
         isRounded
       />
       <Button
         {...args}
-        icon={<Profile height={IconSize.M} width={IconSize.M} />}
+        icon={<Profile height={ICON_SIZES.m} width={ICON_SIZES.m} />}
         size='s'
       />
       <Button
         {...args}
-        icon={<Profile height={IconSize.M} width={IconSize.M} />}
+        icon={<Profile height={ICON_SIZES.m} width={ICON_SIZES.m} />}
         isRounded
         size='s'
       />
