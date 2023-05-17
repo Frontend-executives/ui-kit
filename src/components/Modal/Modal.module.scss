@@ -1,4 +1,5 @@
 @import "../../assets/styles/global";
+@import "../../assets/styles/media";
 
 .modal {
   position: fixed;
@@ -12,6 +13,10 @@
   justify-content: center;
 
   transition: opacity 0.2s ease, visibility 0.2s ease;
+
+  @include mobile {
+    align-items: flex-end;
+  }
 }
 
 .overlay {
@@ -32,19 +37,43 @@
   display: flex;
   flex-direction: column;
   gap: $spacing-2;
-  width: 100%;
+  width: min(70vw, 700px);
   min-height: 100px;
-  max-width: 50vw;
   padding: $spacing-2;
 
   background-color: $ui-white;
-  border-radius: $radius-2;
+  border-radius: $radius-3;
 
-  transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease, transform 0.4s ease;
+
+  @include mobile {
+    width: 100vw;
+
+    border-radius: $radius-3 $radius-3 0 0;
+  }
+}
+
+.gesture {
+  display: none;
+  width: 100px;
+  height: 4px;
+
+  background-color: rgba($ui-gray, 0.5);
+  border-radius: $radius-4;
+
+  align-self: center;
+
+  @include mobile {
+    display: block;
+  }
 }
 
 .button {
   align-self: flex-end;
+
+  @include mobile {
+    display: none;
+  }
 }
 
 .header {
@@ -53,7 +82,18 @@
   justify-content: space-between;
 }
 
+.body {
+  overflow-y: scroll;
+
+  min-height: 30vh;
+  max-height: 50vh;
+}
+
 .hidden {
   visibility: hidden;
   opacity: 0;
+}
+
+.slidedDown {
+  transform: translateY(100%);
 }

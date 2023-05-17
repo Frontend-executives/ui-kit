@@ -1,13 +1,17 @@
 import clsx from 'clsx'
 import React, { FC, useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
+import { useSwipeable } from 'react-swipeable'
 
+import { useCheckIsMobileDevice } from '../../hooks/useCheckIsMobileDevice'
 import { ICON_SIZES } from '../../utils/constants'
 import { Button } from '../Button'
 import IconClose from '../icons/Close'
 import { Typography } from '../Typography'
 import styles from './Modal.module.scss'
 import { IModalProps } from './types'
+
+const PIXELS_TO_SWIPE = 30
 
 const Modal: FC<IModalProps> = ({
   children,
@@ -19,6 +23,15 @@ const Modal: FC<IModalProps> = ({
     const div = document.createElement('div')
     document.body.appendChild(div)
     return div
+  })
+
+  const isMobile = useCheckIsMobileDevice()
+  const handlers = useSwipeable({
+    delta: PIXELS_TO_SWIPE,
+    onSwipedDown: () => onClose(),
+    preventScrollOnSwipe: true,
+    trackMouse: false,
+    trackTouch: true,
   })
 
   useEffect(() => {
@@ -34,7 +47,12 @@ const Modal: FC<IModalProps> = ({
       })}
     >
       <div className={styles.overlay} onClick={onClose} />
-      <div className={styles.content}>
+      <div
+        className={clsx(styles.content, {
+          [styles.slidedDown]: !isOpen && isMobile,
+        })}
+      >
+        <div {...handlers} className={styles.gesture} />
         <div className={styles.header}>
           <Typography element='h3'>{heading}</Typography>
           <Button
@@ -44,7 +62,7 @@ const Modal: FC<IModalProps> = ({
             size='xs'
           />
         </div>
-        {children}
+        <div className={styles.body}>{children}</div>
       </div>
     </div>,
     modalElement,
