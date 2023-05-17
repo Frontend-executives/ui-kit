@@ -7,13 +7,10 @@
   font-size: 1rem;
   line-height: 1.5;
   color: $ui-blue;
+  transition: color 0.2s ease;
 
   &:hover {
     color: $ui-blue-hover;
-  }
-
-  &:active {
-    color: $ui-blue-active;
   }
 
   &:focus,
@@ -21,13 +18,18 @@
     outline: 1px solid $ui-blue-active;
   }
 
-  &:disabled,
-  &_disabled {
+  &:active {
+    color: $ui-blue-active;
+    outline: none;
+  }
+
+  &.disabled {
     opacity: 0.25;
+
     pointer-events: none;
   }
 
-  &_external {
+  &.external {
     display: inline-flex;
     align-items: center;
     gap: 4px;
