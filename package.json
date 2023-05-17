@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
+    "@splidejs/react-splide": "^0.7.12",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -10,6 +11,7 @@
     "@types/node": "^16.18.26",
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
+    "nanoid": "^4.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -22,10 +24,18 @@
     "build": "storybook build",
     "deploy": "npm run lint && npm run typecheck && npm run build && gh-pages -d storybook-static",
     "lint:styles": "stylelint **/*.scss",
-    "lint:scripts": "eslint --ext .js,.jsx,.ts,.tsx src/",
+    "lint:scripts": "eslint --ext .ts,.tsx src/",
     "lint": "npm run lint:styles && npm run lint:scripts",
     "lint-fix": "eslint --ext .js,.jsx,.ts,.tsx src/ --fix && stylelint **/*.scss --fix",
     "typecheck": "tsc --noEmit"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx}": [
+      "npm run lint:scripts"
+    ],
+    "**/*.scss": [
+      "npm run lint:styles"
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -77,6 +87,7 @@
     "eslint-plugin-typescript-sort-keys": "^2.3.0",
     "gh-pages": "^5.0.0",
     "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
     "postcss-scss": "^4.0.6",
     "prop-types": "^15.8.1",
     "storybook": "^7.0.9",

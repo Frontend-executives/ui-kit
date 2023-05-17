@@ -1,0 +1,45 @@
+@import "../../assets/styles/global";
+
+.slider {
+  width: 100%;
+
+  border-radius: $radius-3;
+
+  overflow: hidden;
+}
+
+.slider :global {
+  .splide__pagination__page {
+    background-color: $ui-blue;
+
+    transition: opacity 0.2s ease;
+
+    &.is-active {
+      opacity: 1;
+    }
+  }
+
+  .splide__arrow {
+    background: $ui-blue;
+
+    transition: opacity 0.2s ease;
+
+    & svg {
+      fill: $ui-white;
+    }
+  }
+}
+
+.slide {
+  & img {
+    object-fit: cover;
+    max-width: 100%;
+    height: 100%;
+  }
+}
+
+.progressBar {
+  background-color: $ui-blue;
+
+  border-radius: 100px;
+}

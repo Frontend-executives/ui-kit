@@ -24,7 +24,6 @@ const Link: FC<ILinkProps> = ({className = '', isDisabled = false, isExternal= f
       </Condition>
     </a>
   )
-
 }
 
 export default Link
