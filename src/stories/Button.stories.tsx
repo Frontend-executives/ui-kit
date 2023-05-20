@@ -49,7 +49,7 @@ export const DefaultButtons: Story = {
         {...args}
         onClick={onClick}
         text='Default Buttons'
-        theme='failed'
+        theme='error'
       />
       <Button
         {...args}

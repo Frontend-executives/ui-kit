@@ -1,17 +1,31 @@
 @import "./global";
 
-@mixin theme($text, $background, $hover, $active) {
-  background-color: $background;
-  color: $text;
+@mixin theme($theme-name) {
+  $theme: map-get($themes, $theme-name);
 
-  &:hover {
-    background-color: $hover;
-
-    cursor: pointer;
+  @if $theme == null {
+    @warn "Unknown theme: #{$theme-name}.";
   }
 
-  &:active {
-    background-color: $active;
+  @else {
+    $text: map-get($theme, text);
+    $background: map-get($theme, background);
+    $hover-background: map-get($theme, hover-background);
+    $hover-text: map-get($theme, hover-text);
+    $active: map-get($theme, active);
+
+    background-color: $background;
+    color: $text;
+
+    &:hover {
+      background-color: $hover-background;
+      color: $hover-text;
+      cursor: pointer;
+    }
+
+    &:active {
+      background-color: $active;
+    }
   }
 }
 
