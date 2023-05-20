@@ -1,5 +1,6 @@
 @import "../../assets/styles/global";
 @import "../../assets/styles/media";
+@import "../../assets/styles/mixins";
 
 .modal {
   position: fixed;
@@ -38,7 +39,6 @@
   flex-direction: column;
   gap: $spacing-2;
   width: min(70vw, 700px);
-  min-height: 100px;
   padding: $spacing-2;
 
   background-color: $ui-white;
@@ -54,6 +54,10 @@
 }
 
 .gesture {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+
   display: none;
   width: 100px;
   height: 4px;
@@ -63,6 +67,8 @@
 
   align-self: center;
 
+  transform: translate(-50%, -50%);
+
   @include mobile {
     display: block;
   }
@@ -70,10 +76,6 @@
 
 .button {
   align-self: flex-end;
-
-  @include mobile {
-    display: none;
-  }
 }
 
 .header {
@@ -85,8 +87,9 @@
 .body {
   overflow-y: scroll;
 
-  min-height: 30vh;
   max-height: 50vh;
+
+  @include scroll-bar;
 }
 
 .hidden {

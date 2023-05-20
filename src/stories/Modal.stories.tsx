@@ -1,11 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { Modal } from '../components/Modal'
+import { Slider } from '../components/Slider'
 import { StoryContainer } from '../components/StoryContainer'
+import { sliderMock } from '../utils/sliderMock'
 
 const meta: Meta<typeof Modal> = {
   component: Modal,
-  tags: ['autodocs'],
   title: 'Example/Modal',
 }
 
@@ -13,6 +14,7 @@ export default meta
 type Story = StoryObj<typeof Modal>
 
 const blankFunction = () => alert('Modal closed')
+
 export const DefaultModal: Story = {
   render: (args) => (
     <StoryContainer>
@@ -126,6 +128,36 @@ export const DefaultModal: Story = {
         numquam obcaecati odit porro possimus quasi quisquam recusandae
         repudiandae sed similique unde voluptatibus voluptatum! Ad magnam neque
         sed.
+      </Modal>
+    </StoryContainer>
+  ),
+}
+
+export const ShortModal: Story = {
+  render: (args) => (
+    <StoryContainer>
+      <Modal {...args} heading='Modal heading' isOpen onClose={blankFunction}>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      </Modal>
+    </StoryContainer>
+  ),
+}
+
+export const ModalWithContent: Story = {
+  render: (args) => (
+    <StoryContainer>
+      <Modal {...args} heading='Modal heading' isOpen onClose={blankFunction}>
+        <Slider
+          {...args}
+          isArrowsDisabled
+          isAutoPlay
+          isPaginationDisabled
+          slidesPerPage={2}
+        >
+          <img alt={sliderMock.text.first} src={sliderMock.images.first} />
+          <img alt={sliderMock.text.second} src={sliderMock.images.second} />
+          <img alt={sliderMock.text.third} src={sliderMock.images.third} />
+        </Slider>
       </Modal>
     </StoryContainer>
   ),
