@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import IconProfile from '../components/icons/Profile'
+import IconQuestionCircle from '../components/icons/Question'
 import { StoryContainer } from '../components/StoryContainer'
 import { Tooltip } from '../components/Tooltip'
 import { ICON_SIZES } from '../utils/constants'
+import { sliderMock } from '../utils/sliderMock'
 
 const meta: Meta<typeof Tooltip> = {
   component: Tooltip,
@@ -23,10 +24,10 @@ export const DefaultTooltip: Story = {
         }
         variant='success'
       >
-        <IconProfile height={ICON_SIZES.m} width={ICON_SIZES.m} />
+        <IconQuestionCircle height={ICON_SIZES.m} width={ICON_SIZES.m} />
       </Tooltip>
       <Tooltip {...args} text={'Lorem.'} variant='error'>
-        <IconProfile height={ICON_SIZES.m} width={ICON_SIZES.m} />
+        <p>Hover me</p>
       </Tooltip>
       <Tooltip
         {...args}
@@ -34,7 +35,12 @@ export const DefaultTooltip: Story = {
           'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci amet architecto'
         }
       >
-        <IconProfile height={ICON_SIZES.m} width={ICON_SIZES.m} />
+        <img
+          alt={sliderMock.text.first}
+          height={100}
+          src={sliderMock.images.first}
+          width={100}
+        />
       </Tooltip>
     </StoryContainer>
   ),
