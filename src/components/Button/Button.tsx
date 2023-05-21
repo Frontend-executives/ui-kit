@@ -4,6 +4,7 @@ import { FC } from 'react'
 import { ICON_SIZES, SIZES, THEMES } from '../../utils/constants'
 import { Condition } from '../Condition'
 import Loader from '../icons/Loader'
+import { Typography } from '../Typography'
 import styles from './Button.module.scss'
 import { IButtonProps } from './types'
 
@@ -35,7 +36,9 @@ const Button: FC<IButtonProps> = ({
         />
       </Condition>
       <Condition match={Boolean(!isLoading && icon)}>{icon}</Condition>
-      <Condition match={Boolean(text)}>{text}</Condition>
+      <Condition match={Boolean(text)}>
+        <Typography type='button'>{text}</Typography>
+      </Condition>
     </button>
   )
 }
