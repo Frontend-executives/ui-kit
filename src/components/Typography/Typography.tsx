@@ -8,17 +8,24 @@ const Typography: FC<ITypographyProps> = ({
   children = '',
   className = '',
   element = 'p',
-  isUnderLine = false,
-  isUpperCase = false,
-  type = 'bodyMedium',
+  isUnderline = false,
+  isUppercase = false,
+  size = 'M',
+  type = 'paragraph',
 }) => {
   return createElement(
     element,
     {
-      className: clsx(styles.typography, styles[type], className, {
-        [styles.upperCase]: isUpperCase,
-        [styles.underLine]: isUnderLine,
-      }),
+      className: clsx(
+        styles.typography,
+        styles[type],
+        styles[size],
+        className,
+        {
+          [styles.uppercase]: isUppercase,
+          [styles.underline]: isUnderline,
+        },
+      ),
     },
     children ?? null,
   )

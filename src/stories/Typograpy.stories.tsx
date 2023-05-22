@@ -17,7 +17,7 @@ const typographyText = `Lorem ipsum dolor sit amet, consectetur adipisicing elit
 export const defaultTypography: Story = {
   render: (args) => (
     <StoryContainer>
-      <Typography {...args} isUnderLine isUpperCase>
+      <Typography {...args} isUnderline isUppercase>
         {typographyText}
       </Typography>
     </StoryContainer>
@@ -27,7 +27,7 @@ export const defaultTypography: Story = {
 export const displayLarge: Story = {
   render: (args) => (
     <StoryContainer>
-      <Typography {...args} type='displayLarge'>
+      <Typography {...args} size='L' type='display'>
         {typographyText}
       </Typography>
     </StoryContainer>
@@ -37,7 +37,7 @@ export const displayLarge: Story = {
 export const displayMedium: Story = {
   render: (args) => (
     <StoryContainer>
-      <Typography {...args} type='displayMedium'>
+      <Typography {...args} size='M' type='display'>
         {typographyText}
       </Typography>
     </StoryContainer>
@@ -47,7 +47,7 @@ export const displayMedium: Story = {
 export const displaySmall: Story = {
   render: (args) => (
     <StoryContainer>
-      <Typography {...args} type='displaySmall'>
+      <Typography {...args} size='S' type='display'>
         {typographyText}
       </Typography>
     </StoryContainer>
@@ -57,7 +57,7 @@ export const displaySmall: Story = {
 export const headlineLarge: Story = {
   render: (args) => (
     <StoryContainer>
-      <Typography {...args} type='headlineLarge'>
+      <Typography {...args} size='L' type='headline'>
         {typographyText}
       </Typography>
     </StoryContainer>
@@ -67,7 +67,7 @@ export const headlineLarge: Story = {
 export const headlineMedium: Story = {
   render: (args) => (
     <StoryContainer>
-      <Typography {...args} type='headlineMedium'>
+      <Typography {...args} size='M' type='headline'>
         {typographyText}
       </Typography>
     </StoryContainer>
@@ -77,7 +77,7 @@ export const headlineMedium: Story = {
 export const headlineSmall: Story = {
   render: (args) => (
     <StoryContainer>
-      <Typography {...args} type='headlineSmall'>
+      <Typography {...args} size='S' type='headline'>
         {typographyText}
       </Typography>
     </StoryContainer>
@@ -87,7 +87,7 @@ export const headlineSmall: Story = {
 export const titleLarge: Story = {
   render: (args) => (
     <StoryContainer>
-      <Typography {...args} type='titleLarge'>
+      <Typography {...args} size='L' type='title'>
         {typographyText}
       </Typography>
     </StoryContainer>
@@ -97,7 +97,7 @@ export const titleLarge: Story = {
 export const titleMedium: Story = {
   render: (args) => (
     <StoryContainer>
-      <Typography {...args} type='titleMedium'>
+      <Typography {...args} size='M' type='title'>
         {typographyText}
       </Typography>
     </StoryContainer>
@@ -107,37 +107,7 @@ export const titleMedium: Story = {
 export const titleSmall: Story = {
   render: (args) => (
     <StoryContainer>
-      <Typography {...args} type='titleSmall'>
-        {typographyText}
-      </Typography>
-    </StoryContainer>
-  ),
-}
-
-export const bodyLarge: Story = {
-  render: (args) => (
-    <StoryContainer>
-      <Typography {...args} type='bodyLarge'>
-        {typographyText}
-      </Typography>
-    </StoryContainer>
-  ),
-}
-
-export const bodyMedium: Story = {
-  render: (args) => (
-    <StoryContainer>
-      <Typography {...args} type='bodyMedium'>
-        {typographyText}
-      </Typography>
-    </StoryContainer>
-  ),
-}
-
-export const bodySmall: Story = {
-  render: (args) => (
-    <StoryContainer>
-      <Typography {...args} type='bodySmall'>
+      <Typography {...args} size='S' type='title'>
         {typographyText}
       </Typography>
     </StoryContainer>
@@ -147,7 +117,7 @@ export const bodySmall: Story = {
 export const paragraphLarge: Story = {
   render: (args) => (
     <StoryContainer>
-      <Typography {...args} type='paragraphLarge'>
+      <Typography {...args} size='L' type='paragraph'>
         {typographyText}
       </Typography>
     </StoryContainer>
@@ -157,7 +127,7 @@ export const paragraphLarge: Story = {
 export const paragraphMedium: Story = {
   render: (args) => (
     <StoryContainer>
-      <Typography {...args} type='paragraphMedium'>
+      <Typography {...args} size='M' type='paragraph'>
         {typographyText}
       </Typography>
     </StoryContainer>
@@ -167,7 +137,7 @@ export const paragraphMedium: Story = {
 export const paragraphSmall: Story = {
   render: (args) => (
     <StoryContainer>
-      <Typography {...args} type='paragraphSmall'>
+      <Typography {...args} size='S' type='paragraph'>
         {typographyText}
       </Typography>
     </StoryContainer>
@@ -188,16 +158,6 @@ export const caption: Story = {
   render: (args) => (
     <StoryContainer>
       <Typography {...args} type='caption'>
-        {typographyText}
-      </Typography>
-    </StoryContainer>
-  ),
-}
-
-export const underline: Story = {
-  render: (args) => (
-    <StoryContainer>
-      <Typography {...args} type='underline'>
         {typographyText}
       </Typography>
     </StoryContainer>
