@@ -63,31 +63,31 @@
 }
 
 .primary {
-  @include theme($text-on-color, $ui-blue, $ui-blue-hover, $ui-blue-active);
+  @include theme("primary");
 }
 
 .success {
-  @include theme($text-on-color, $ui-green, $ui-green-hover, $ui-green-active);
+  @include theme("success");
 }
 
-.failed {
-  @include theme($text-on-color, $ui-red, $ui-red-hover, $ui-red-active);
+.error {
+  @include theme("error");
 }
 
 .warning {
-  @include theme($text-on-color, $ui-orange, $ui-orange-hover, $ui-orange-active);
+  @include theme("warning");
 }
 
 .tertiary {
-  @include theme($ui-blue, transparent, transparent, transparent);
+  @include theme("tertiary");
 }
 
 .black {
-  @include theme($text-on-color, $ui-black, $ui-black-hover, $ui-black-active);
+  @include theme("dark");
 }
 
 .white {
-  @include theme($ui-blue, $ui-white, $ui-white-hover, $ui-white-active);
+  @include theme("light");
 }
 
 .rounded {

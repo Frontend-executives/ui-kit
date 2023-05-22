@@ -1,0 +1,44 @@
+@import "../../assets/styles/global";
+@import "../../assets/styles/mixins";
+
+.tooltip {
+  max-width: 400px;
+
+  &:global(.react-tooltip) {
+    border-radius: $radius-2;
+  }
+}
+
+.element {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.primary {
+  @include theme("primary");
+}
+
+.success {
+  @include theme("success");
+}
+
+.error {
+  @include theme("error");
+}
+
+.warning {
+  @include theme("warning");
+}
+
+.tertiary {
+  @include theme("tertiary");
+}
+
+.black {
+  @include theme("dark");
+}
+
+.white {
+  @include theme("light");
+}

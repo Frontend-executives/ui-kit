@@ -6,7 +6,7 @@ export const ICON_SIZES = {
 
 export const THEMES = {
   black: 'black',
-  failed: 'failed',
+  error: 'error',
   primary: 'primary',
   success: 'success',
   tertiary: 'tertiary',

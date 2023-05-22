@@ -43,6 +43,7 @@ $background-gray: #eeeeee;
 $background-brand: #186ade;
 $background-overlay: rgba(0, 0, 0, 0.65);
 $border: #c6c6c6;
+$dark: #252525;
 
 // RADIUS
 $radius-1: 4px;
@@ -60,3 +61,55 @@ $spacing-6: 48px;
 $spacing-7: 64px;
 $spacing-8: 80px;
 $spacing-9: 96px;
+
+$themes: (
+  primary: (
+    text: $ui-white,
+    background: $ui-blue,
+    hover-background: $ui-blue-hover,
+    hover-text: $ui-white,
+    active: $ui-blue-active,
+  ),
+  success: (
+    text: $ui-white,
+    background: $ui-green,
+    hover-background: $ui-green-hover,
+    hover-text: $ui-white,
+    active: $ui-green-active,
+  ),
+  error: (
+    text: $ui-white,
+    background: $ui-red,
+    hover-background: $ui-red-hover,
+    hover-text: $ui-white,
+    active: $ui-red-active,
+  ),
+  warning: (
+    text: $ui-white,
+    background: $ui-orange,
+    hover-background: $ui-orange-hover,
+    hover-text: $ui-white,
+    active: $ui-orange-active,
+  ),
+  light: (
+    text: $dark,
+    background: $ui-white,
+    hover-background: $ui-white-hover,
+    hover-text: $dark,
+    active: $ui-white-active,
+  ),
+  dark: (
+    text: $ui-white,
+    background: $ui-black,
+    hover-background: $ui-black-hover,
+    hover-text: $ui-white,
+    active: $ui-black-active,
+  ),
+  tertiary: (
+    text: $ui-blue,
+    background: transparent,
+    hover-background: transparent,
+    hover-text: $ui-blue-hover,
+    active: transparent,
+  )
+);
