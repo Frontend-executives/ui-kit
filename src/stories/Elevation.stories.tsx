@@ -29,7 +29,7 @@ export const DefaultElevation: Story = {
   ),
 }
 
-export const ImageElevation: Story = {
+export const SliderElevation: Story = {
   render: (args) => (
     <StoryContainer>
       <Elevation {...args}>
