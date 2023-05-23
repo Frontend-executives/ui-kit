@@ -1,8 +1,110 @@
 @import "../../assets/styles/global";
+@import "../../assets/styles/fonts";
 
 .typography {
   margin: 0;
-  padding: 0;
 
   font-family: "Gilroy", serif;
+
+  color: $text-primary;
+}
+
+.display,
+.headline,
+.title {
+  font-weight: 600;
+}
+
+.paragraph,
+.button,
+.caption {
+  font-weight: 400;
+}
+
+.display {
+  &.S {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  &.M {
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  &.L {
+    font-size: 56px;
+    line-height: 64px;
+  }
+}
+
+.headline {
+  &.S {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  &.M {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  &.L {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+.title {
+  &.S {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  &.M {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  &.L {
+    font-size: 22px;
+    line-height: 28px;
+  }
+}
+
+.paragraph {
+  &.S {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &.M {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &.L {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+.button {
+  font-size: 14px;
+  line-height: 20px;
+
+  color: inherit;
+}
+
+.caption {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }

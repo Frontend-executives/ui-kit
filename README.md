@@ -7,6 +7,9 @@
 - `Slider`
 - `Condition`
 - `Modal`
+- `Tooltip`
+- `Elevation`
+- `Typography`
 
 ### Установка зависимостей:
 

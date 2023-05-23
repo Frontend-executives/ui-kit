@@ -1,22 +1,32 @@
 import clsx from 'clsx'
 import { createElement, FC } from 'react'
 
+import { ITypographyProps } from './types'
 import styles from './Typography.module.scss'
-
-interface ITypographyProps {
-  children: string,
-  className?: string
-  element?: string
-}
 
 const Typography: FC<ITypographyProps> = ({
   children = '',
   className = '',
   element = 'p',
+  isUnderline = false,
+  isUppercase = false,
+  size = 'M',
+  type = 'paragraph',
 }) => {
   return createElement(
     element,
-    { className: clsx(styles.typography, className) },
+    {
+      className: clsx(
+        styles.typography,
+        styles[type],
+        styles[size],
+        className,
+        {
+          [styles.uppercase]: isUppercase,
+          [styles.underline]: isUnderline,
+        },
+      ),
+    },
     children ?? null,
   )
 }
