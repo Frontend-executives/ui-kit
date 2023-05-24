@@ -1,0 +1,76 @@
+@import "../../assets/styles/global";
+
+.accordion {
+  max-width: max-content;
+}
+
+.accordionButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 16px;
+
+  font-size: 1rem;
+  font-family: "Gilroy", "Segoe UI", sans-serif;
+  line-height: 1.5;
+  text-align: left;
+  color: $text-primary;
+
+  border: none;
+  background-color: $background-white;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+
+  transition: background-color 0.3s ease;
+
+  cursor: pointer;
+
+  &:not(:disabled):hover {
+    background-color: $ui-surface-gray;
+  }
+
+  &:disabled {
+    opacity: 0.25;
+
+    cursor: auto;
+  }
+
+  &:focus-visible {
+    outline: 1px solid $ui-blue;
+  }
+
+  img,
+  svg {
+    align-self: flex-start;
+    flex-shrink: 0;
+
+    transition: transform 0.3s ease;
+  }
+
+  &.active {
+    img,
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.container {
+  width: 100%;
+
+  transition: max-height 0.3s ease, background-color 0.3s ease;
+
+  overflow: hidden;
+}
+
+.wrapper {
+  padding: 8px 16px 16px 16px;
+}
+
+.text {
+  margin: 0;
+
+  line-height: 1.5;
+  font-family: "Gilroy", "Segoe UI", sans-serif;
+}
