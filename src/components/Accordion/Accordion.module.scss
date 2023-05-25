@@ -4,9 +4,10 @@
   max-width: max-content;
 }
 
-.accordionButton {
+.button {
   display: flex;
   justify-content: space-between;
+  flex-direction: row-reverse;
   align-items: center;
   gap: 8px;
   width: 100%;
@@ -26,18 +27,29 @@
 
   cursor: pointer;
 
-  &:not(:disabled):hover {
+  &:hover {
+    color: $text-primary;
+
     background-color: $ui-surface-gray;
   }
 
   &:disabled {
     opacity: 0.25;
+    background-color: transparent;
 
     cursor: auto;
   }
 
+  &:focus {
+    outline: none;
+  }
+
   &:focus-visible {
     outline: 1px solid $ui-blue;
+  }
+
+  &:active {
+    background-color: transparent;
   }
 
   img,

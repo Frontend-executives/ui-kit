@@ -1,19 +1,23 @@
-import React, { FC, useRef, useState } from 'react'
+import clsx from 'clsx'
+import { FC, useRef, useState } from 'react'
 
+import { ICON_SIZES } from '../../utils/constants'
+import Button from '../Button/Button'
 import IconChevronDown from '../icons/IconChevronDown'
+import Typography from '../Typography/Typography'
 import styles from './Accordion.module.scss'
 import { IAccordionProps } from './types'
 
 const Accordion: FC<IAccordionProps> = ({
-  caption = '',
+  caption,
   isDisabled = false,
-  text = '',
+  text,
 }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [contentHeight, setContentHeight] = useState(0)
   const contentRef = useRef<HTMLDivElement>(null)
 
-  const handleToggle = () => {
+  const onToggle = () => {
     const scrollHeight = contentRef.current?.scrollHeight ?? 1000
     setIsOpen(!isOpen)
     setContentHeight(isOpen ? 0 : scrollHeight)
@@ -21,22 +25,22 @@ const Accordion: FC<IAccordionProps> = ({
 
   return (
     <div className={styles.accordion}>
-      <button
-        className={`${styles.accordionButton} ${isOpen ? styles.active : ''}`}
-        disabled={isDisabled}
-        onClick={handleToggle}
-        type={'button'}
-      >
-        <span>{caption}</span>
-        <IconChevronDown height={24} width={24} />
-      </button>
+      <Button
+        className={clsx(styles.button, { [styles.active]: isOpen })}
+        icon={<IconChevronDown height={ICON_SIZES.l} width={ICON_SIZES.l} />}
+        isDisabled={isDisabled}
+        onClick={onToggle}
+        text={caption}
+      />
       <div
         className={styles.container}
         ref={contentRef}
         style={{ maxHeight: `${contentHeight}px` }}
       >
         <div className={styles.wrapper}>
-          <p className={styles.text}>{text}</p>
+          <Typography size='M' type='paragraph'>
+            {text}
+          </Typography>
         </div>
       </div>
     </div>
