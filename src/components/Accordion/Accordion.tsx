@@ -2,7 +2,6 @@ import clsx from 'clsx'
 import { FC, useRef, useState } from 'react'
 
 import { ICON_SIZES } from '../../utils/constants'
-import Button from '../Button/Button'
 import IconChevronDown from '../icons/IconChevronDown'
 import Typography from '../Typography/Typography'
 import styles from './Accordion.module.scss'
@@ -25,13 +24,15 @@ const Accordion: FC<IAccordionProps> = ({
 
   return (
     <div className={styles.accordion}>
-      <Button
+      <button
         className={clsx(styles.button, { [styles.active]: isOpen })}
-        icon={<IconChevronDown height={ICON_SIZES.l} width={ICON_SIZES.l} />}
-        isDisabled={isDisabled}
+        disabled={isDisabled}
         onClick={onToggle}
-        text={caption}
-      />
+        type='button'
+      >
+        <span>{caption}</span>
+        <IconChevronDown height={ICON_SIZES.l} width={ICON_SIZES.l} />
+      </button>
       <div
         className={styles.container}
         ref={contentRef}
